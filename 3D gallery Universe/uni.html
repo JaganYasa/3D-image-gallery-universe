@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Interactive Media Gallery</title>
+    <link rel="stylesheet" href="uni.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div id="three-container"></div>
+    
+    <div class="overlay-ui">
+        <header class="header">
+            <h1 class="title">3D Memory Universe</h1>
+            <p class="subtitle">Immersive moments in infinite space</p>
+        </header>
+
+        <nav class="controls">
+            <button class="control-btn active" data-view="sphere">Sphere Galaxy</button>
+            <button class="control-btn" data-view="spiral">Spiral Universe</button>
+            <button class="control-btn" data-view="cube">Quantum Cube</button>
+            <button class="control-btn" data-view="portal">Portal View</button>
+            <button class="upload-btn">+ Add Memory</button>
+        </nav>
+
+        <div class="info-panel" id="infoPanel">
+            <div class="panel-glow"></div>
+            <button class="close-btn" id="closeBtn">&times;</button>
+            <div class="info-content">
+                <h2 id="infoTitle">Memory Crystal</h2>
+                <p id="infoDescription">Navigate through the cosmos of memories</p>
+                <div class="info-meta">
+                    <span id="infoDate"></span>
+                    <span id="infoLocation"></span>
+                </div>
+                <div class="memory-stats">
+                    <div class="stat">
+                        <span class="stat-label">Emotion</span>
+                        <span class="stat-value" id="emotionLevel">Joy</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Clarity</span>
+                        <div class="clarity-bar">
+                            <div class="clarity-fill" id="clarityFill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="loading-screen" id="loadingScreen">
+            <div class="loading-animation">
+                <div class="loading-sphere"></div>
+                <div class="loading-text">Initializing 3D Universe...</div>
+                <div class="loading-progress">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+            </div>
+        </div>
+
+        <input type="file" id="fileInput" accept="image/*,video/*" multiple style="display: none;">
+        
+        <div class="hud">
+            <div class="compass" id="compass">
+                <div class="compass-arrow"></div>
+            </div>
+            <div class="coordinates" id="coordinates">
+                <span>X: 0</span>
+                <span>Y: 0</span>
+                <span>Z: 0</span>
+            </div>
+        </div>
+    </div>
+    <script src="uni.js"></script>
+</body>
+</html>
